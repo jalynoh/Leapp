@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.example.zaimzanaruddin.derplist.CreateEventActivity">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="EVENT CREATION"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/IV_Image"
+        android:layout_width="match_parent"
+        android:layout_height="160dp"
+        android:background="@color/white" />
+
+    <Button
+        android:id="@+id/BTN_InsertImage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Select Image"/>
+
+    <EditText
+        android:id="@+id/ET_EventName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="event name..."
+        android:textColorHint="@color/white"
+        android:inputType="text"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/ET_Location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="location..."
+        android:textColorHint="@color/white"
+        android:inputType="textPostalAddress"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/ET_Description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="description..."
+        android:textColorHint="@color/white"
+        android:inputType="textMultiLine"
+        android:gravity="center"
+        android:lines="3"
+        android:maxLines="3"
+        android:textColor="@color/white"/>
+
+    <EditText
+        android:id="@+id/ET_Date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="date..."
+        android:textColorHint="@color/white"
+        android:inputType="date"
+        android:gravity="center" />
+
+    <EditText
+        android:id="@+id/ET_Start_Time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="start time..."
+        android:textColorHint="@color/white"
+        android:inputType="time"
+        android:gravity="center"/>
+
+    <Button
+        android:id="@+id/BTN_Create"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Create event" />
+
+    <TextView
+        android:id="@+id/TV_Exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="exit"
+        android:textColor="@color/white"
+        android:gravity="center_horizontal" />
+</LinearLayout>
