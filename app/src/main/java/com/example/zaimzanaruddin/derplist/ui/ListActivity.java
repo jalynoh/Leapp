@@ -13,8 +13,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.zaimzanaruddin.derplist.AccountSettings;
 import com.example.zaimzanaruddin.derplist.CreateEventActivity;
 import com.example.zaimzanaruddin.derplist.LoginActivity;
+import com.example.zaimzanaruddin.derplist.AccountSettings;
 import com.example.zaimzanaruddin.derplist.MainActivity;
 import com.example.zaimzanaruddin.derplist.R;
 import com.example.zaimzanaruddin.derplist.RegisterActivity;
@@ -75,9 +77,7 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
         //inflater.inflate(R.menu.refresh,menu);
         //inflater.inflate(R.menu.stop,menu);
         //return super.onCreateOptionsMenu(menu);
-        menu.add("Settings");
-        menu.add("About Us");
-        menu.add("Contact ");
+
 
         menu.getItem(0).setIcon(R.drawable.event);
         menu.getItem(1).setIcon(R.drawable.out);
@@ -93,8 +93,10 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
             case R.id.SignOff:
                 logout();
                 startActivity(new Intent(ListActivity.this, LoginActivity.class));
-
                 finish();
+                return true;
+            case R.id.Setting:
+                startActivity(new Intent(ListActivity.this, AccountSettings.class));
                 return true;
             default:
                 return true;

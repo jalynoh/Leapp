@@ -16,6 +16,7 @@
                 <category android:name="android.intent.category.default" />
             </intent-filter>
         </activity>
+
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".CreateEventActivity" />
@@ -27,7 +28,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.ListActivity" />
-        <activity android:name=".ui.EventPage"></activity>
+        <activity android:name=".ui.EventPage" />
+        <activity android:name=".AccountSettings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+
     </application>
 
 </manifest>

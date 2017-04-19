@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+
 import com.example.zaimzanaruddin.derplist.ui.ListActivity;
 
 
@@ -62,6 +63,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         if(db.verifyUser(email, pass)) { //if user is validated
             session.setLoggedin(true); //set session to true
             session.setCurrentUser(email); //sets current user
+
 
             startActivity(new Intent(LoginActivity.this, ListActivity.class)); //jump to MainActivity
             finish();

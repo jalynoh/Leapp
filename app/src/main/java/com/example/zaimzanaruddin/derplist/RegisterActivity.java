@@ -16,11 +16,14 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private TextView TV_Login;
     private EditText ET_Name, ET_Email, ET_Username, ET_Password;
     private dbHelper db;
+    private Session session;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+
+        session = new Session(this);
         db = new dbHelper(this);
         BTN_Register = (Button)findViewById(R.id.BTN_Register);
         TV_Login = (TextView)findViewById(R.id.TV_Login);
@@ -62,6 +65,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
         else {
             db.addUser(name, email, username, password); //stores in db
+            session.setUser_name(name);
             displayToast("User registered"); //displays confirmation message
             finish();
         }

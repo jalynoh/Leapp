@@ -9,6 +9,12 @@
         android:title="SignOff"
         android:icon="@drawable/out"
         app:showAsAction="ifRoom|withText"/>
+    <item android:id="@+id/Setting"
+        android:title="Setting"
+        app:showAsAction="ifRoom|withText"/>
+    <item android:id="@+id/Filter"
+        android:title="Filter"
+        app:showAsAction="ifRoom|withText"/>
 
 
 </menu>
