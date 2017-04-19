@@ -71,6 +71,8 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         }
     }
 
+
+
     private void displayToast(String message) {
         Toast.makeText(getApplicationContext(), message, Toast.LENGTH_SHORT).show();
     }

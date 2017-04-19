@@ -16,7 +16,6 @@
                 <category android:name="android.intent.category.default" />
             </intent-filter>
         </activity>
-
         <activity android:name=".RegisterActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".CreateEventActivity" />
@@ -36,8 +35,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-
+        <activity android:name=".ChangePassword" />
+        <activity android:name=".Filter"></activity>
     </application>
 
 </manifest>

@@ -49,6 +49,18 @@ public class Session {
     public String getUser_Email(){return prefs.getString("user_Email", "none");}
 
 
+    public void setUser_Password(String name){
+        editor.putString("user_Password", name);
+        editor.commit();
+
+    }
+
+    public String getUser_Password(){return prefs.getString("user_Password", "none");}
+
+
+
+
+
 
 
 
