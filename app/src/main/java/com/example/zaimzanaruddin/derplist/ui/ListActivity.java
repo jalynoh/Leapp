@@ -24,7 +24,7 @@ import com.example.zaimzanaruddin.derplist.Session;
 import com.example.zaimzanaruddin.derplist.adapter.DerpAdapter;
 import com.example.zaimzanaruddin.derplist.model.DerpData;
 import com.example.zaimzanaruddin.derplist.model.ListItem;
-
+import com.example.zaimzanaruddin.derplist.Filter;
 
 public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemClickCallback {
 
@@ -80,7 +80,8 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
 
 
         menu.getItem(0).setIcon(R.drawable.event);
-        menu.getItem(1).setIcon(R.drawable.out);
+        //menu.getItem(1).setIcon(R.drawable.out);
+        menu.getItem(2).setIcon(R.drawable.filter);
 
         return true;
     }
@@ -94,6 +95,9 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
                 logout();
                 startActivity(new Intent(ListActivity.this, LoginActivity.class));
                 finish();
+                return true;
+            case R.id.Filter:
+                startActivity(new Intent(this,Filter.class));
                 return true;
             case R.id.Setting:
                 startActivity(new Intent(ListActivity.this, AccountSettings.class));
