@@ -2,12 +2,10 @@ package com.example.zaimzanaruddin.derplist.adapter;
 
 
 
-import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
@@ -16,12 +14,8 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 
-import com.example.zaimzanaruddin.derplist.CreateEventActivity;
-import com.example.zaimzanaruddin.derplist.LoginActivity;
 import com.example.zaimzanaruddin.derplist.model.ListItem;
 import com.example.zaimzanaruddin.derplist.R;
-import com.example.zaimzanaruddin.derplist.ui.EventPage;
-import com.example.zaimzanaruddin.derplist.ui.ListActivity;
 
 
 /**
@@ -49,7 +43,7 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
 
 
     public DerpAdapter(List<ListItem> listData, Context c) {
-        this.inflater = LayoutInflater.from(c);
+        inflater = LayoutInflater.from(c);
         this.listData = listData;
 
     }
@@ -66,7 +60,6 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
         ListItem item = listData.get(position);
         holder.title.setText(item.getTitle());
         holder.location.setText(item.getlocation());
-        holder.date.setText(item.getDate());
         holder.time.setText(item.getTime());
         holder.thumbnail.setImageURI(Uri.parse(item.getImageResId())); //NEW ADDITION !!!!!!
     }
@@ -91,9 +84,9 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
 
         private TextView title;
         private TextView location;
-        private TextView date;
+       // private TextView date;
         private TextView time;
-        private View container;
+                View container;
 
 
         public DerpHolder(View itemView) {
@@ -105,23 +98,20 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
             thirdIcon = (ImageView) itemView.findViewById(R.id.im_item_icon_downarrow);
             thirdIcon.setOnClickListener(this);
             title = (TextView) itemView.findViewById(R.id.lbl_event_title);
-            date = (TextView) itemView.findViewById(R.id.im_date);
+           // date = (TextView) itemView.findViewById(R.id.im_date);
             time = (TextView) itemView.findViewById(R.id.im_time);
             location = (TextView) itemView.findViewById(R.id.lbl_location_title);
-            container = itemView.findViewById(R.id.cont_card_content);
+            container = itemView.findViewById(R.id.cont_item_root);
             container.setOnClickListener(this);
 
         }
 
         @Override
         public void onClick(View v) {
-                if (v.getId() == R.id.cont_card_content) {
-
-
-
-                    //itemClickCallback.onItemClick(getAdapterPosition());
+                if (v.getId() == R.id.cont_item_root) {
+                    itemClickCallback.onItemClick(getAdapterPosition());
                 } else {
-                    itemClickCallback.onSecondaryIconClick(getAdapterPosition());
+                 //   itemClickCallback.onSecondaryIconClick(getAdapterPosition());
                 }
             }
         }

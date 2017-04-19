@@ -12,8 +12,16 @@ public class ListItem {
         private String location;
         private String date;
         private String time;
+        private String description;
 
 
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description){
+        this.description = description;
+    }
 
     public String getlocation() {
         return location;

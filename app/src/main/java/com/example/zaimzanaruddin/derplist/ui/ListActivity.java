@@ -32,8 +32,9 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
     private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
     private static final String EXTRA_TITLE = "EXTRA_TITLE";
     private static final String EXTRA_LOC = "EXTRA_LOC";
-    private static final String EXTRA_DATE = "EXTRA_DATE";
+    private static final String EXTRA_DES = "EXTRA_DES";
     private static final String EXTRA_TIME = "EXTRA_TIME";
+    private static final String EXTRA_PIC = "EXTRA_PIC";
 
 
     private RecyclerView recView;
@@ -118,8 +119,9 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
         Bundle extras = new Bundle();
         extras.putString(EXTRA_TITLE, item.getTitle());
         extras.putString(EXTRA_LOC, item.getlocation());
-        extras.putString(EXTRA_DATE, item.getDate());
+        extras.putString(EXTRA_DES, item.getDate());
         extras.putString(EXTRA_TIME, item.getTime());
+        extras.putString(EXTRA_PIC, item.getImageResId());
 
         i.putExtra(BUNDLE_EXTRAS, extras);
 
@@ -128,16 +130,7 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
 
     @Override
     public void onSecondaryIconClick(int p) {
-        ListItem item = (ListItem) listData.get(p);
-        //update our data
-       // if (item.isFavourite()){
-      //      item.setFavourite(false);
-     //   } else {
-      //      item.setFavourite(true);
-      //  }
-        //pass new data to adapter and update
-        adapter.setListData(listData);
-        adapter.notifyDataSetChanged();
+
     }
 
 
