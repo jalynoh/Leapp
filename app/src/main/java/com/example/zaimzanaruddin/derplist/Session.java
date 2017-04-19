@@ -33,6 +33,37 @@ public class Session {
         editor.commit();
     }
 
+    public void setUser_name(String name){
+        editor.putString("user_name", name);
+        editor.commit();
+
+    }
+
+    public String getUser_name(){return prefs.getString("user_name", "none");}
+
+    public void setUser_Email(String name){
+        editor.putString("user_Email", name);
+        editor.commit();
+
+    }
+    public String getUser_Email(){return prefs.getString("user_Email", "none");}
+
+
+    public void setUser_Password(String name){
+        editor.putString("user_Password", name);
+        editor.commit();
+
+    }
+
+    public String getUser_Password(){return prefs.getString("user_Password", "none");}
+
+
+
+
+
+
+
+
     public boolean loggedin() {
         return prefs.getBoolean("loggedInmode", false);
     }

@@ -30,7 +30,16 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.ListActivity" />
-        <activity android:name=".ui.EventPage"></activity>
+        <activity android:name=".ui.EventPage" />
+        <activity android:name=".AccountSettings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ChangePassword" />
+        <activity android:name=".Filter"></activity>
     </application>
 
 </manifest>
