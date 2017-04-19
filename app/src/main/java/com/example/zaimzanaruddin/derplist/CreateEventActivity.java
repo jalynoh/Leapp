@@ -1,14 +1,18 @@
 package com.example.zaimzanaruddin.derplist;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageView;
@@ -36,7 +40,9 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
     private EditText ET_Date, ET_Location, ET_Description, ET_Start_Time, ET_EventName;
     private dbHelper db;
     private static final int SELECT_PHOTO = 100;
-    public String imagePath;
+    //public String imagePath;
+    public Uri selectedImageUri;
+    private static final int PERMS_REQUEST_CODE = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -83,9 +89,10 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
         String location = ET_Location.getText().toString();
         String description = ET_Description.getText().toString();
         String start = ET_Start_Time.getText().toString();
+        String imageUri = selectedImageUri.toString();
 
 
-        Event e = new Event(start, title, location, description, 0, false, imagePath);
+        Event e = new Event(start, title, location, description, 0, false, imageUri);
         Event.Event_List.add(e);
 
         // Add Event to database
@@ -94,7 +101,7 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
         }
         else {
             //TEST THIS!!!!
-            db.addEvent(title, date, start, location, description,0, false, imagePath); //stores in db
+            db.addEvent(title, date, start, location, description,0, false, imageUri); //stores in db
             displayToast("event created"); //displays confirmation message
             startActivity(new Intent(CreateEventActivity.this, ListActivity.class)); //jump back to MainActivity
             finish();
@@ -108,7 +115,7 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
     private void openGallery() { //opens the android gallery
         Intent intent = new Intent();
         intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
+        intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PHOTO); //starts finder activity followed by onActivityResult()
     }
 
@@ -118,12 +125,15 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
         if (resultCode == RESULT_OK) {
             if (requestCode == SELECT_PHOTO) {
                 // Get the url from data
-                Uri selectedImageUri = data.getData();
+                selectedImageUri = data.getData();
                 if (null != selectedImageUri) {
                     // Get the path from the Uri
-                    imagePath = getPathFromURI(selectedImageUri);
+                    String imagePath = getPathFromURI(selectedImageUri);
                     // Set the image in ImageView
+
                     IV_Image.setImageURI(selectedImageUri);
+
+                    displayToast(selectedImageUri +": SELECTED");
                 }
             }
         }
@@ -141,4 +151,6 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
         cursor.close();
         return res;
     }
+
+
 }

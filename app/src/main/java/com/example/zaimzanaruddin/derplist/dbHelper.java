@@ -178,6 +178,7 @@ public class dbHelper extends SQLiteOpenHelper {
         String description;
         int likes;
         boolean active;
+        String image;
 
         Cursor data = db.getData(); //get data and appends it to list
         while(data.moveToNext()) {
@@ -188,8 +189,9 @@ public class dbHelper extends SQLiteOpenHelper {
             description = data.getString(5);
             likes = data.getInt(6);
             active = data.getInt(7) > 0;
+            image =  data.getString(8);
 
-            Event e = new Event(id, start, title, location, description, likes, active);
+            Event e = new Event(start, title, location, description, likes, active, image);
             Event.Event_List.add(e);
         }
     }

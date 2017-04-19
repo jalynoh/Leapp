@@ -24,11 +24,8 @@
                 android:id="@+id/im_event_icon"
                 android:layout_width="match_parent"
                 android:layout_height="156dp"
-                android:background="#F16664"
-                android:padding="36dp"
-                android:src="@drawable/ic_event_black_36dp"
-                android:tint="#FFFFFF"
-
+                android:background="@color/colorPrimaryDark"
+                android:scaleType="fitXY"
                 />
 
             <TextView

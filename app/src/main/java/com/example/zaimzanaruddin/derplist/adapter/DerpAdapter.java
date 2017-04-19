@@ -3,6 +3,7 @@ package com.example.zaimzanaruddin.derplist.adapter;
 
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ import android.view.ViewGroup;
 import java.util.ArrayList;
 
 
+import com.example.zaimzanaruddin.derplist.CreateEventActivity;
 import com.example.zaimzanaruddin.derplist.LoginActivity;
 import com.example.zaimzanaruddin.derplist.model.ListItem;
 import com.example.zaimzanaruddin.derplist.R;
@@ -66,6 +68,7 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
         holder.location.setText(item.getlocation());
         holder.date.setText(item.getDate());
         holder.time.setText(item.getTime());
+        holder.thumbnail.setImageURI(Uri.parse(item.getImageResId())); //NEW ADDITION !!!!!!
     }
 
     public void setListData(ArrayList<ListItem> exerciseList) {
@@ -113,7 +116,10 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
         @Override
         public void onClick(View v) {
                 if (v.getId() == R.id.cont_card_content) {
-                    itemClickCallback.onItemClick(getAdapterPosition());
+
+
+
+                    //itemClickCallback.onItemClick(getAdapterPosition());
                 } else {
                     itemClickCallback.onSecondaryIconClick(getAdapterPosition());
                 }

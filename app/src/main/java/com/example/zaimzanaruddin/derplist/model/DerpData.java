@@ -1,5 +1,7 @@
 package com.example.zaimzanaruddin.derplist.model;
 
+import android.widget.Toast;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -63,13 +65,17 @@ public class DerpData {
 
     public static List<ListItem> getListData() {
         List<ListItem> data = new ArrayList<>();
+        int count = 0;
 
         for (Event e : Event.Event_List) {
             ListItem item = new ListItem();
             item.setTitle(e.getEvent_Title());
             item.setlocation(e.getEvent_Location());
             item.setDate(e.getEvent_Start());
+            item.setImageResId(e.getEvent_Image());
             data.add(item);
+            count++;
+
 
 
         }

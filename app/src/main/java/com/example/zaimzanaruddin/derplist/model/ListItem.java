@@ -8,7 +8,7 @@ public class ListItem {
 
 
         private String title;
-        private int imageResId;
+        private String imageResId;
         private String location;
         private String date;
         private String time;
@@ -50,16 +50,16 @@ public class ListItem {
             return title;
         }
 
-        public void setTitle(String title) {
+    public void setTitle(String title) {
             this.title = title;
         }
 
 
-        public int getImageResId() {
+    public String getImageResId() {
             return imageResId;
         }
 
-        public void setImageResId(int imageResId) {
+    public void setImageResId(String imageResId) {
             this.imageResId = imageResId;
         }
 
