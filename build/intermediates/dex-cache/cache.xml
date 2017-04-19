@@ -3,12 +3,30 @@
 
     <item
         is-multidex="true"
+        jar="/Users/zaimzanaruddin/Documents/LeipWorkingEdition/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="8d298a30672fef130843d4dcd2dce023deef2dd1">
+        <dex dex="/Users/zaimzanaruddin/Documents/LeipWorkingEdition/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_54dbc780e35d0dac88e49726735203283343dc18/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="/Users/zaimzanaruddin/Desktop/Leep/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
         jumboMode="true"
         optimize="true"
         revision="25.0.2"
         sha1="cb9e6cd59e6b8d869d85fbd9a93130ad5f3b3336">
         <dex dex="/Users/zaimzanaruddin/Desktop/Leep/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_47caecaba39fa7f84e8267227ccc0681f870a2ed/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zaimzanaruddin/Documents/LeipWorkingEdition/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.2"
+        sha1="510aa6efc159983dfbffa676a0dae37568c0a46f">
+        <dex dex="/Users/zaimzanaruddin/Documents/LeipWorkingEdition/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_214c7340d52027d13a20c2c54d72943b82f4b521/classes.dex" />
     </item>
     <item
         is-multidex="true"

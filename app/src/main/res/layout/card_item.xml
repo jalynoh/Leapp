@@ -15,7 +15,7 @@
         card_view:cardCornerRadius="4dp">
 
         <RelativeLayout
-            android:id="@+id/cont_card_content"
+            android:id="@+id/cont_card_root"
             android:layout_width="match_parent"
             android:layout_height="300dp"
             android:background="#ECEFF1">
@@ -114,6 +114,16 @@
                 android:textColor="@android:color/darker_gray"
                 android:textSize="15sp"
                 />
+
+            <Button
+                android:id="@+id/im_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/lbl_event_title"
+                android:layout_marginTop="11dp"
+                android:layout_toEndOf="@+id/im_date"
+                android:layout_toRightOf="@+id/im_date"
+                android:text="Button" />
 
         </RelativeLayout>
 

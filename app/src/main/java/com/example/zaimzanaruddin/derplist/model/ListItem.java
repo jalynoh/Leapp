@@ -55,13 +55,14 @@ public class ListItem {
         }
 
 
-        public int getImageResId() {
-            return imageResId;
-        }
+       // public int getImageResId()
+    // {
+     //       return imageResId;
+     //   }
 
-        public void setImageResId(int imageResId) {
-            this.imageResId = imageResId;
-        }
+      //  public void setImageResId(int imageResId) {
+       //     this.imageResId = imageResId;
+      //  }
 
 
 

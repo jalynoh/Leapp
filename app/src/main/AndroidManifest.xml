@@ -27,7 +27,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.ListActivity" />
-        <activity android:name=".ui.EventPage"></activity>
+        <activity android:name=".ui.EventPage" />
+        <activity android:name=".ui.DetailActivity"></activity>
     </application>
 
 </manifest>

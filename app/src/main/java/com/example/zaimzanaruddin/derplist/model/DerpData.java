@@ -40,7 +40,7 @@ public class DerpData {
 
 
     private static final int icon = R.drawable.ic_event_black_36dp;
-/*
+
     public static List<ListItem> getListData() {
         List<ListItem> data = new ArrayList<>();
 
@@ -59,8 +59,8 @@ public class DerpData {
         }
         return data;
     }
-*/
 
+/*
     public static List<ListItem> getListData() {
         List<ListItem> data = new ArrayList<>();
 
@@ -75,6 +75,7 @@ public class DerpData {
         }
         return data;
     }
+*/
 
 }
 

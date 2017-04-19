@@ -24,50 +24,58 @@ import com.example.zaimzanaruddin.derplist.model.DerpData;
 import com.example.zaimzanaruddin.derplist.model.ListItem;
 
 
+
+
+
+
+
 public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemClickCallback {
-
-
     private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
-    private static final String EXTRA_TITLE = "EXTRA_TITLE";
-    private static final String EXTRA_LOC = "EXTRA_LOC";
-    private static final String EXTRA_DATE = "EXTRA_DATE";
-    private static final String EXTRA_TIME = "EXTRA_TIME";
+    private static final String EXTRA_QUOTE = "EXTRA_QUOTE";
+    private static final String EXTRA_ATTR = "EXTRA_ATTR";
 
-
-    private RecyclerView recView;
+    private RecyclerView recyclerView;
     private DerpAdapter adapter;
     private ArrayList listData;
-    private Session session;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        session = new Session(this);
-        if (!session.loggedin()) { //if user was not previously logged in, logout
-            logout();
-        }
-
         listData = (ArrayList) DerpData.getListData();
 
-        recView = (RecyclerView) findViewById(R.id.rec_list);
-        //Check out GridLayoutManager and StaggeredGridLayoutManager for more options
-        recView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView = (RecyclerView) findViewById(R.id.rec_list);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         adapter = new DerpAdapter(DerpData.getListData(), this);
-        recView.setAdapter(adapter);
+        recyclerView.setAdapter(adapter);
         adapter.setItemClickCallback(this);
     }
 
-    private void logout() {
-        session.setLoggedin(false);
-        finish();
-        startActivity(new Intent(ListActivity.this, LoginActivity.class));
+    @Override
+    public void onItemClick(int p) {
+        ListItem item = (ListItem) listData.get(p);
+
+        Intent i = new Intent(this, DetailActivity.class);
+
+        Bundle extras = new Bundle();
+        extras.putString(EXTRA_QUOTE, item.getTitle());
+        extras.putString(EXTRA_ATTR, item.getlocation());
+        i.putExtra(BUNDLE_EXTRAS, extras);
+
+        startActivity(i);
     }
 
+    @Override
+    public void onSecondaryIconClick(int p) {
 
+    }
+}
+
+
+
+/*
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater mflater = getMenuInflater();
@@ -102,37 +110,4 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
         }
     }
 
-
-    @Override
-    public void onItemClick(int p){
-        ListItem item = (ListItem) listData.get(p);
-
-        Intent i = new Intent(this, DetailActivity.class);
-
-        Bundle extras = new Bundle();
-        extras.putString(EXTRA_TITLE, item.getTitle());
-        extras.putString(EXTRA_LOC, item.getlocation());
-        extras.putString(EXTRA_DATE, item.getDate());
-        extras.putString(EXTRA_TIME, item.getTime());
-
-        i.putExtra(BUNDLE_EXTRAS, extras);
-
-        startActivity(i);
-    }
-
-    @Override
-    public void onSecondaryIconClick(int p) {
-        ListItem item = (ListItem) listData.get(p);
-        //update our data
-       // if (item.isFavourite()){
-      //      item.setFavourite(false);
-     //   } else {
-      //      item.setFavourite(true);
-      //  }
-        //pass new data to adapter and update
-        adapter.setListData(listData);
-        adapter.notifyDataSetChanged();
-    }
-
-
-}
+*/
