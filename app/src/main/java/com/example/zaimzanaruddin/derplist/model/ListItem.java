@@ -12,6 +12,24 @@ public class ListItem {
         private String location;
         private String date;
         private String time;
+        private String description;
+        private int upvote;
+
+
+    public int getUpvote() {
+        return upvote;
+    }
+
+    public void setUpVote(int p){
+        this.upvote = p;
+    }
+
+
+    public String getDescription() { return description;}
+
+    public void setDescription(String description){
+        this.description=description;
+    }
 
 
 
@@ -55,14 +73,14 @@ public class ListItem {
         }
 
 
-       // public int getImageResId()
-    // {
-     //       return imageResId;
-     //   }
+        public int getImageResId()
+    {
+            return imageResId;
+    }
 
-      //  public void setImageResId(int imageResId) {
-       //     this.imageResId = imageResId;
-      //  }
+    public void setImageResId(int imageResId) {
+        this.imageResId = imageResId;
+    }
 
 
 

@@ -23,8 +23,8 @@ public class EventPage extends AppCompatActivity {
         Bundle extras = getIntent().getBundleExtra(BUNDLE_EXTRAS);
 
         ((TextView)findViewById(R.id.lbl_quote_title)).setText(extras.getString(EXTRA_TITLE));
-        ((TextView)findViewById(R.id.lbl_quote_loc)).setText(extras.getString(EXTRA_LOC));
-       ((TextView)findViewById(R.id.lbl_quote_date)).setText(extras.getString(EXTRA_DATE));
+        ((TextView)findViewById(R.id.lbl_quote_location)).setText(extras.getString(EXTRA_LOC));
+      // ((TextView)findViewById(R.id.lbl_quote_date)).setText(extras.getString(EXTRA_DATE));
         ((TextView)findViewById(R.id.lbl_quote_time)).setText(extras.getString(EXTRA_TIME));
     }
 }

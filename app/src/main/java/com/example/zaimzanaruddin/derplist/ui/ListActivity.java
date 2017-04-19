@@ -29,14 +29,19 @@ import com.example.zaimzanaruddin.derplist.model.ListItem;
 
 
 
+
 public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemClickCallback {
     private static final String BUNDLE_EXTRAS = "BUNDLE_EXTRAS";
     private static final String EXTRA_QUOTE = "EXTRA_QUOTE";
     private static final String EXTRA_ATTR = "EXTRA_ATTR";
+    private static final String EXTRA_TIME = "EXTRA_TIME";
+    private static final String EXTRA_DES = "EXTRA_DES";
+
 
     private RecyclerView recyclerView;
     private DerpAdapter adapter;
     private ArrayList listData;
+    private Session session;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +52,12 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
 
         recyclerView = (RecyclerView) findViewById(R.id.rec_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
+        session = new Session(this);
+        if(!session.loggedin()) { //if user was not previously logged in, logout
+            logout();
+        }
 
         adapter = new DerpAdapter(DerpData.getListData(), this);
         recyclerView.setAdapter(adapter);
@@ -62,6 +73,10 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
         Bundle extras = new Bundle();
         extras.putString(EXTRA_QUOTE, item.getTitle());
         extras.putString(EXTRA_ATTR, item.getlocation());
+        extras.putString(EXTRA_TIME, item.getTime());
+        extras.putString(EXTRA_DES, item.getDescription());
+
+
         i.putExtra(BUNDLE_EXTRAS, extras);
 
         startActivity(i);
@@ -71,11 +86,10 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
     public void onSecondaryIconClick(int p) {
 
     }
-}
 
 
 
-/*
+
     public boolean onCreateOptionsMenu(Menu menu) {
 
         MenuInflater mflater = getMenuInflater();
@@ -110,4 +124,10 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
         }
     }
 
-*/
+    private void logout() {
+        session.setLoggedin(false);
+        finish();
+        startActivity(new Intent(ListActivity.this, LoginActivity.class));
+    }
+
+}

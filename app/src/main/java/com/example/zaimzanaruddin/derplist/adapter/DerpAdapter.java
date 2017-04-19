@@ -35,7 +35,6 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
 
     public interface ItemClickCallback {
         void onItemClick(int p);
-
         void onSecondaryIconClick(int p);
     }
 
@@ -59,7 +58,7 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
         ListItem item = listData.get(position);
         holder.title.setText(item.getTitle());
         holder.location.setText(item.getlocation());
-
+        holder.time.setText(item.getTime());
     }
 
     @Override
@@ -77,18 +76,27 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
     class DerpHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView thumbnail;
-        //  ImageView secondaryIcon;
+        ImageView secondaryIcon;
+        ImageView thirdIcon;
         TextView title;
+        TextView time;
         TextView location;
+        //Need to add Date
+
         View container;
 
         public DerpHolder(View itemView) {
             super(itemView);
             thumbnail = (ImageView) itemView.findViewById(R.id.im_event_icon);
-
+            secondaryIcon = (ImageView) itemView.findViewById(R.id.im_uparrow);
+            secondaryIcon.setOnClickListener(this);
+            thirdIcon = (ImageView) itemView.findViewById(R.id.im_item_icon_downarrow);
+            thirdIcon.setOnClickListener(this);
             location = (TextView) itemView.findViewById(R.id.lbl_location_title);
             title = (TextView) itemView.findViewById(R.id.lbl_event_title);
-            container = (View) itemView.findViewById(R.id.cont_item_root);
+            location = (TextView) itemView.findViewById(R.id.lbl_location_title);
+            time = (TextView) itemView.findViewById(R.id.im_time);
+            container = itemView.findViewById(R.id.cont_item_root);
             container.setOnClickListener(this);
         }
 
