@@ -1,14 +1,18 @@
 package com.example.zaimzanaruddin.derplist;
 
+import android.Manifest;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
 import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore;
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatImageView;
@@ -38,6 +42,7 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
     private static final int SELECT_PHOTO = 100;
     //public String imagePath;
     public Uri selectedImageUri;
+    private static final int PERMS_REQUEST_CODE = 123;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -110,7 +115,7 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
     private void openGallery() { //opens the android gallery
         Intent intent = new Intent();
         intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
+        intent.setAction(Intent.ACTION_OPEN_DOCUMENT);
         startActivityForResult(Intent.createChooser(intent, "Select Picture"), SELECT_PHOTO); //starts finder activity followed by onActivityResult()
     }
 
@@ -146,4 +151,6 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
         cursor.close();
         return res;
     }
+
+
 }
