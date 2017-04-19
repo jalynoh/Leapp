@@ -69,6 +69,7 @@ public class DerpData {
             item.setTitle(e.getEvent_Title());
             item.setlocation(e.getEvent_Location());
             item.setDate(e.getEvent_Start());
+            item.setImageResId(e.getEvent_Image());
             data.add(item);
 
 

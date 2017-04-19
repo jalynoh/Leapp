@@ -4,6 +4,8 @@ package com.example.zaimzanaruddin.derplist;
 
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
+
 import java.util.ArrayList;
 
 public class Event {
