@@ -71,8 +71,9 @@ public class DerpData {
             ListItem item = new ListItem();
             item.setTitle(e.getEvent_Title());
             item.setlocation(e.getEvent_Location());
-            item.setDate(e.getEvent_Start());
+            item.setTime(e.getEvent_Start());
             item.setImageResId(e.getEvent_Image());
+            item.setDescription(e.getEvent_Description());
             data.add(item);
             count++;
 
