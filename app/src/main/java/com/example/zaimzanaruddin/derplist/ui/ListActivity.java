@@ -119,7 +119,7 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
         Bundle extras = new Bundle();
         extras.putString(EXTRA_TITLE, item.getTitle());
         extras.putString(EXTRA_LOC, item.getlocation());
-        extras.putString(EXTRA_DES, item.getDate());
+        extras.putString(EXTRA_DES, item.getDescription());
         extras.putString(EXTRA_TIME, item.getTime());
         extras.putString(EXTRA_PIC, item.getImageResId());
 

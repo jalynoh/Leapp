@@ -33,6 +33,7 @@
         android:layout_marginTop="10dp"
         android:hint="Name / Organization"
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
     <EditText
@@ -45,7 +46,8 @@
         android:layout_marginTop="10dp"
         android:hint="Email"
         android:textColorHint="@color/white"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/ET_UserName"
@@ -59,7 +61,8 @@
         android:inputType="textEmailAddress"
         android:maxLines="1"
         android:textColorHint="@color/white"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
 
     <EditText
         android:id="@+id/ET_Password"
@@ -73,7 +76,8 @@
         android:inputType="textPassword"
         android:maxLines="1"
         android:textColorHint="@color/white"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        android:textColor="@color/white"/>
     <Button
         android:id="@+id/BTN_Register"
         android:layout_width="match_parent"
