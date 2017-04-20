@@ -74,6 +74,7 @@ public class DerpData {
             item.setTime(e.getEvent_Start());
             item.setImageResId(e.getEvent_Image());
             item.setDescription(e.getEvent_Description());
+            item.setLikes(e.getEvent_Likes());
             data.add(item);
             count++;
 
