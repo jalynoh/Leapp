@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class ChangePassword extends AppCompatActivity {
+public class  ChangePassword extends AppCompatActivity {
 
     private Session session;
     private Button BTN_pw;

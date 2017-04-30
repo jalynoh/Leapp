@@ -13,7 +13,21 @@ public class ListItem {
         private String date;
         private String time;
         private String description;
+        private int likes;
 
+    public int getLikes() {return likes;}
+
+    public void setLikes(int likes){
+        this.likes =likes;
+    }
+
+    public void upVote(){
+        this.likes++;
+    }
+
+    public void downVote(){
+        this.likes--;
+    }
 
     public String getDescription() {
         return description;

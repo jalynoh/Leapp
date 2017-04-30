@@ -6,6 +6,7 @@ import android.net.Uri;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
@@ -33,6 +34,7 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
     public interface ItemClickCallback {
         void onSecondaryIconClick(int p);
         void onItemClick(int p);
+        void onThirdIconClick(int p);
     }
 
 
@@ -61,6 +63,7 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
         holder.title.setText(item.getTitle());
         holder.location.setText(item.getlocation());
         holder.time.setText(item.getTime());
+        holder.likes.setText(String.valueOf(item.getLikes()));
         holder.thumbnail.setImageURI(Uri.parse(item.getImageResId())); //NEW ADDITION !!!!!!
     }
 
@@ -87,6 +90,8 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
        // private TextView date;
         private TextView time;
                 View container;
+        private TextView likes;
+
 
 
         public DerpHolder(View itemView) {
@@ -98,11 +103,13 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
             thirdIcon = (ImageView) itemView.findViewById(R.id.im_item_icon_downarrow);
             thirdIcon.setOnClickListener(this);
             title = (TextView) itemView.findViewById(R.id.lbl_event_title);
+            likes = (TextView) itemView.findViewById(R.id.im_Likes);
            // date = (TextView) itemView.findViewById(R.id.im_date);
             time = (TextView) itemView.findViewById(R.id.im_time);
             location = (TextView) itemView.findViewById(R.id.lbl_location_title);
             container = itemView.findViewById(R.id.cont_item_root);
             container.setOnClickListener(this);
+
 
         }
 
@@ -110,8 +117,10 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
         public void onClick(View v) {
                 if (v.getId() == R.id.cont_item_root) {
                     itemClickCallback.onItemClick(getAdapterPosition());
-                } else {
-                 //   itemClickCallback.onSecondaryIconClick(getAdapterPosition());
+                } else if(v.getId()==R.id.im_uparrow){
+                   itemClickCallback.onSecondaryIconClick(getAdapterPosition());
+                }else if(v.getId()==R.id.im_item_icon_downarrow){
+                    itemClickCallback.onThirdIconClick(getAdapterPosition());
                 }
             }
         }

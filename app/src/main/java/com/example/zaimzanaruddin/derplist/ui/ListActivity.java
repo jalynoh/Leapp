@@ -21,6 +21,7 @@ import com.example.zaimzanaruddin.derplist.MainActivity;
 import com.example.zaimzanaruddin.derplist.R;
 import com.example.zaimzanaruddin.derplist.RegisterActivity;
 import com.example.zaimzanaruddin.derplist.Session;
+import com.example.zaimzanaruddin.derplist.SplashScreen;
 import com.example.zaimzanaruddin.derplist.adapter.DerpAdapter;
 import com.example.zaimzanaruddin.derplist.model.DerpData;
 import com.example.zaimzanaruddin.derplist.model.ListItem;
@@ -94,7 +95,7 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
                 return true;
             case R.id.SignOff:
                 logout();
-                startActivity(new Intent(ListActivity.this, LoginActivity.class));
+                startActivity(new Intent(ListActivity.this, SplashScreen.class));
                 finish();
                 return true;
             case R.id.Filter:
@@ -131,7 +132,31 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
     @Override
     public void onSecondaryIconClick(int p) {
 
+        ListItem item = (ListItem) listData.get(p);
+
+    item.upVote();
+
+
+    //pass new data to adapter and update
+    adapter.setListData(listData);
+    adapter.notifyDataSetChanged();
+
+
     }
 
 
+    @Override
+    public void onThirdIconClick(int p) {
+
+    ListItem item = (ListItem) listData.get(p);
+
+    item.downVote();
+
+
+    //pass new data to adapter and update
+    adapter.setListData(listData);
+    adapter.notifyDataSetChanged();
+
+
+    }
 }
