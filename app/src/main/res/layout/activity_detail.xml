@@ -26,12 +26,12 @@
         app:layout_constraintVertical_bias="0.0"
         android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        tools:layout_editor_absoluteX="6dp" />
+        app:layout_constraintHorizontal_bias="0.947" />
 
     <TextView
         android:id="@+id/lbl_quote_title"
-        android:layout_width="366dp"
-        android:layout_height="44dp"
+        android:layout_width="342dp"
+        android:layout_height="47dp"
         android:text="Event Title Location"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textStyle="bold"
@@ -45,27 +45,29 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:layout_marginBottom="8dp"
         app:layout_constraintVertical_bias="0.447"
-        />
+        tools:layout_editor_absoluteY="207dp"
+        tools:layout_editor_absoluteX="33dp" />
 
 
     <TextView
         android:id="@+id/lbl_quote_description"
-        android:layout_width="278dp"
-        android:layout_height="72dp"
+        android:layout_width="276dp"
+        android:layout_height="61dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="16dp"
         android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif"
+        android:gravity="left"
+        android:textAlignment="textStart"
+        android:textSize="18sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toRightOf="@+id/imageView3"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.609"
-        android:gravity="left"
-        android:fontFamily="sans-serif"
-        android:textSize="14dp"
-        android:textStyle="bold"/>
+        app:layout_constraintVertical_bias="0.609" />
 
     <ImageView
         android:id="@+id/imageView3"
@@ -95,10 +97,10 @@
         android:layout_marginBottom="8dp"
         android:layout_marginRight="1dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintVertical_bias="0.787"
+        app:layout_constraintVertical_bias="0.766"
         app:layout_constraintLeft_toRightOf="@+id/lbl_quote_loc"
         android:layout_marginLeft="8dp"
-        app:layout_constraintHorizontal_bias="0.666" />
+        app:layout_constraintHorizontal_bias="1.0" />
 
     <ImageView
         android:id="@+id/imageView5"
@@ -111,51 +113,50 @@
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="16dp"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintVertical_bias="0.981"
+        app:layout_constraintVertical_bias="0.924"
         app:layout_constraintRight_toLeftOf="@+id/lbl_quote_time"
-        android:layout_marginRight="8dp" />
-
-
-
+        android:layout_marginRight="8dp"
+        app:layout_constraintHorizontal_bias="0.0" />
 
 
     <TextView
         android:id="@+id/lbl_quote_time"
-        android:layout_width="308dp"
-        android:layout_height="60dp"
-        android:text="TextView"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="275dp"
+        android:layout_height="51dp"
         android:layout_marginBottom="8dp"
-        android:layout_marginRight="-2dp"
-        app:layout_constraintVertical_bias="0.958"
-        app:layout_constraintRight_toRightOf="parent"
-        android:gravity="left"
+        android:layout_marginRight="21dp"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
-        android:textSize="14dp"
-        android:textStyle="bold"/>
+        android:gravity="left"
+        android:text="TextView"
+        android:textAlignment="textStart"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.925" />
 
     <TextView
         android:id="@+id/lbl_quote_loc"
-        android:layout_width="281dp"
-        android:layout_height="60dp"
-        android:text="TextView"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="278dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="8dp"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.091"
-        app:layout_constraintVertical_bias="0.79"
-        android:gravity="right"
+        android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
-        android:textSize="14dp"
+        android:gravity="right"
+        android:text="TextView"
+        android:textAlignment="textEnd"
+        android:textSize="36sp"
         android:textStyle="bold"
-        />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.769" />
 
 
 </android.support.constraint.ConstraintLayout>
