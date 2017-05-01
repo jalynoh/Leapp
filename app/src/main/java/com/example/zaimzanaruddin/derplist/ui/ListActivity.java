@@ -145,18 +145,4 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
     }
 
 
-    @Override
-    public void onThirdIconClick(int p) {
-
-    ListItem item = (ListItem) listData.get(p);
-
-    item.downVote();
-
-
-    //pass new data to adapter and update
-    adapter.setListData(listData);
-    adapter.notifyDataSetChanged();
-
-
-    }
 }

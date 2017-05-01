@@ -82,6 +82,76 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
+    public void addDefaultEvents() {
+       String[] locations = {"Nedderman",
+                "University Center ",
+                "ERB",
+                "Central Library",
+                "College Park",
+               "CPC",
+               "Pie Five",
+               "MAC",
+               "Pickard Hall"
+
+        };
+
+        String[] titles = {"UTA Campus Connect",
+                "Pizza with the President",
+                "Khallil's Stock class",
+                "MSA Block Party",
+                "Auns Need help Coding",
+                "Birthday Party",
+                "Free Massages",
+                "Tshirt Exchange",
+                "Glass Show"
+
+        };
+
+
+
+        String[] description = {"UTA Campus Connect",
+                "Pizza with the President",
+                "Khallil's Stock class",
+                "MSA Block Party",
+                "Auns Need help Coding",
+                "There will be an Event",
+                "Events Will Be here",
+                "Please Give us an A",
+                "Dont break the App"};
+
+
+
+        String[] start = {"3:00",
+                "12:00",
+                "1:30",
+                "10:02",
+                "7:75",
+                "2:45",
+               "6:41",
+               "5:00",
+                "3:21"};
+
+
+        int[] likes = {34,
+                59,
+                10,
+                5,
+                100,
+                78,
+                 56,
+                 28,
+        2};
+
+
+
+        for(int i = 0; i<8; i++)
+        {
+            Event e = new Event(start[i], titles[i], locations[i], description[i], likes[i], false, "@drawable/utamavericks");
+            Event.Event_List.add(e);
+        }
+
+    }
+
     @TargetApi(11)
     public void addNewEvent(){
         String title = ET_EventName.getText().toString();
@@ -100,7 +170,6 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
             displayToast("Field left empty"); //displays error message
         }
         else {
-            //TEST THIS!!!!
             db.addEvent(title, date, start, location, description,0, false, imageUri); //stores in db
             displayToast("event created"); //displays confirmation message
             startActivity(new Intent(CreateEventActivity.this, ListActivity.class)); //jump back to MainActivity

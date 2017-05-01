@@ -17,6 +17,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private EditText ET_Email, ET_Password;
     private dbHelper db;
     private Session session;
+    private CreateEventActivity CEA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
         db = new dbHelper(this);
         session = new Session(this);
+        CEA = new CreateEventActivity();
         login = (Button)findViewById(R.id.BTN_Login);
         register = (Button)findViewById(R.id.BTN_Register);
         ET_Email = (EditText)findViewById(R.id.ET_Email);
@@ -46,6 +48,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         //below code is used to check which button has been clicked
         switch(v.getId()) {
             case R.id.BTN_Login:
+                if (session.getEventsPopulated()) {
+                    CEA.addDefaultEvents();
+                    session.setEventsPopulated(false);
+                }
+
                 login();
                 break;
             case R.id.BTN_Register:

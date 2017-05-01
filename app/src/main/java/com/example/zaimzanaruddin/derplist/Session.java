@@ -19,6 +19,15 @@ public class Session {
         editor = prefs.edit();
     }
 
+    public void setEventsPopulated(boolean eventsPopulated) {
+        editor.putBoolean("eventsPopulated", eventsPopulated);
+        editor.commit();
+    }
+
+    public boolean getEventsPopulated() {
+        return prefs.getBoolean("eventsPopulated", true);
+    }
+
     public void setCurrentUser(String name) { //sets current logged in user
         editor.putString("currentUser", name);
         editor.commit();
