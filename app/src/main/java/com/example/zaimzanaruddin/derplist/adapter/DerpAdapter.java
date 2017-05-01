@@ -34,7 +34,6 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
     public interface ItemClickCallback {
         void onSecondaryIconClick(int p);
         void onItemClick(int p);
-        void onThirdIconClick(int p);
     }
 
 
@@ -100,11 +99,8 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
             thumbnail = (ImageView) itemView.findViewById(R.id.im_event_icon);
             secondaryIcon = (ImageView) itemView.findViewById(R.id.im_uparrow);
             secondaryIcon.setOnClickListener(this);
-            thirdIcon = (ImageView) itemView.findViewById(R.id.im_item_icon_downarrow);
-            thirdIcon.setOnClickListener(this);
             title = (TextView) itemView.findViewById(R.id.lbl_event_title);
             likes = (TextView) itemView.findViewById(R.id.im_Likes);
-           // date = (TextView) itemView.findViewById(R.id.im_date);
             time = (TextView) itemView.findViewById(R.id.im_time);
             location = (TextView) itemView.findViewById(R.id.lbl_location_title);
             container = itemView.findViewById(R.id.cont_item_root);
@@ -119,8 +115,6 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
                     itemClickCallback.onItemClick(getAdapterPosition());
                 } else if(v.getId()==R.id.im_uparrow){
                    itemClickCallback.onSecondaryIconClick(getAdapterPosition());
-                }else if(v.getId()==R.id.im_item_icon_downarrow){
-                    itemClickCallback.onThirdIconClick(getAdapterPosition());
                 }
             }
         }

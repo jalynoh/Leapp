@@ -15,6 +15,8 @@ public class ListItem {
         private String description;
         private int likes;
 
+
+
     public int getLikes() {return likes;}
 
     public void setLikes(int likes){
@@ -25,9 +27,6 @@ public class ListItem {
         this.likes++;
     }
 
-    public void downVote(){
-        this.likes--;
-    }
 
     public String getDescription() {
         return description;

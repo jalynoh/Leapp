@@ -65,7 +65,7 @@ public class DerpData {
 
     public static List<ListItem> getListData() {
         List<ListItem> data = new ArrayList<>();
-        int count = 0;
+
 
         for (Event e : Event.Event_List) {
             ListItem item = new ListItem();
@@ -76,13 +76,12 @@ public class DerpData {
             item.setDescription(e.getEvent_Description());
             item.setLikes(e.getEvent_Likes());
             data.add(item);
-            count++;
-
-
 
         }
         return data;
     }
+
+
 
 }
 
