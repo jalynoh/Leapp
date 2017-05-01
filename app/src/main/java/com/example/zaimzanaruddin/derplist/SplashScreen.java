@@ -21,19 +21,24 @@ public class SplashScreen extends AppCompatActivity {
 
     private final int REQUEST_PERMISSION_READ_EXTERNAL_STORAGE=1;
     private dbHelper db;
+    private Session session;
+    private CreateEventActivity CEA;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
-
+        CEA = new CreateEventActivity();
+        session = new Session(this);
         final ImageView iv= (ImageView) findViewById(R.id.imageView);
         final Animation an= AnimationUtils.loadAnimation(getBaseContext(),R.anim.rotate);
         final Animation an2= AnimationUtils.loadAnimation(getBaseContext(),R.anim.abc_fade_out);
 
+        //Adds pre-made events to the list for testing purposes
+        CEA.addDefaultEvents();
+
         db = new dbHelper(this);
         showManageDocumentsPermission();
-        //dbHelper.Populate_Event_List(db);
 
 
 

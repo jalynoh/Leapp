@@ -86,9 +86,9 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
        String[] locations = {"Nedderman",
                 "University Center ",
                 "ERB",
-                "Central Library",
+                "College Park District",
                 "College Park",
-               "CPC",
+               "ERB",
                "Pie Five",
                "MAC",
                "Pickard Hall"
@@ -142,11 +142,23 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
                  28,
         2};
 
+        String[] imageURI = {
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utanedd",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utauc",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utak",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utav",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utamavericks",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utaerb2",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utaedge",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utamac",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utaerb"
+        };
+
 
 
         for(int i = 0; i<8; i++)
         {
-            Event e = new Event(start[i], titles[i], locations[i], description[i], likes[i], false, "@drawable/utamavericks");
+            Event e = new Event(start[i], titles[i], locations[i], description[i], likes[i], false, imageURI[i]);
             Event.Event_List.add(e);
         }
 

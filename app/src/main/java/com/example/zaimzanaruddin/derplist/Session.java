@@ -19,12 +19,12 @@ public class Session {
         editor = prefs.edit();
     }
 
-    public void setEventsPopulated(boolean eventsPopulated) {
+    public void setEvents(boolean eventsPopulated) {
         editor.putBoolean("eventsPopulated", eventsPopulated);
         editor.commit();
     }
 
-    public boolean getEventsPopulated() {
+    public boolean getEvents() {
         return prefs.getBoolean("eventsPopulated", true);
     }
 

@@ -15,6 +15,7 @@ import android.view.View;
 
 import com.example.zaimzanaruddin.derplist.AccountSettings;
 import com.example.zaimzanaruddin.derplist.CreateEventActivity;
+import com.example.zaimzanaruddin.derplist.Event;
 import com.example.zaimzanaruddin.derplist.LoginActivity;
 import com.example.zaimzanaruddin.derplist.AccountSettings;
 import com.example.zaimzanaruddin.derplist.MainActivity;
@@ -42,6 +43,7 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
     private DerpAdapter adapter;
     private ArrayList listData;
     private Session session;
+    private boolean upvoted=false;
 
 
     @Override
@@ -95,7 +97,6 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
                 return true;
             case R.id.SignOff:
                 logout();
-                startActivity(new Intent(ListActivity.this, SplashScreen.class));
                 finish();
                 return true;
             case R.id.Filter:
@@ -134,7 +135,15 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
 
         ListItem item = (ListItem) listData.get(p);
 
-    item.upVote();
+       if(upvoted==false)
+       {
+           item.upVote();
+           upvoted=true;
+       }
+
+
+
+
 
 
     //pass new data to adapter and update

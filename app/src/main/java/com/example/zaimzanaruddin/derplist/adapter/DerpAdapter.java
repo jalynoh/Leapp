@@ -82,8 +82,6 @@ public class DerpAdapter extends RecyclerView.Adapter<DerpAdapter.DerpHolder> {
 
         private ImageView thumbnail;
         private ImageView secondaryIcon;
-        private ImageView thirdIcon;
-
         private TextView title;
         private TextView location;
        // private TextView date;

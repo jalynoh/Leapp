@@ -1,5 +1,7 @@
 package com.example.zaimzanaruddin.derplist.model;
 
+import com.example.zaimzanaruddin.derplist.Event;
+
 /**
  * Created by zaimzanaruddin on 4/16/17.
  */
@@ -14,6 +16,8 @@ public class ListItem {
         private String time;
         private String description;
         private int likes;
+
+
 
 
 
