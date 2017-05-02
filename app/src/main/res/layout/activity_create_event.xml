@@ -70,7 +70,6 @@
         android:hint="date..."
         android:textColorHint="@color/white"
         android:inputType="date"
-        android:gravity="center"
         android:textStyle="bold"
         android:textColor="@color/white"
         android:gravity="center" />
