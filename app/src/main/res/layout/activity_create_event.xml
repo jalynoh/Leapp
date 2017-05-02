@@ -71,7 +71,9 @@
         android:textColorHint="@color/white"
         android:inputType="date"
         android:gravity="center"
-        android:textStyle="bold"/>
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:gravity="center" />
 
     <EditText
         android:id="@+id/ET_Start_Time"
@@ -79,6 +81,7 @@
         android:layout_height="wrap_content"
         android:hint="start time..."
         android:textColorHint="@color/white"
+        android:textColor="@color/white"
         android:inputType="time"
         android:gravity="center"
         android:textStyle="bold"/>

@@ -82,110 +82,33 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
         }
     }
 
-    public void addDefaultEvents() {
-       String[] locations = {"Nedderman",
-                "University Center ",
-                "ERB",
-                "College Park District",
-                "College Park",
-               "ERB",
-               "Pie Five",
-               "MAC",
-               "Pickard Hall"
-
-        };
-
-        String[] titles = {"UTA Campus Connect",
-                "Pizza with the President",
-                "Khallil's Stock class",
-                "MSA Block Party",
-                "Auns Need help Coding",
-                "Birthday Party",
-                "Free Massages",
-                "Tshirt Exchange",
-                "Glass Show"
-
-        };
-
-
-
-        String[] description = {"UTA Campus Connect",
-                "Join us as we have a meeting with the president to discuss issues on campus",
-                "Khallil's loves stocks and whats to tell you more about it. Be sure to come!",
-                "MSA Block Party will be hosted before finals to get you mind off the stress!",
-                "Auns Need help Coding because he really does not know what hes doing",
-                "There will be an Event of a birthday event here at Uta. Weird right?",
-                "Events Will Be here",
-                "Please Give us an A",
-                "Dont break the App"};
-
-
-
-        String[] start = {"3:00",
-                "12:00",
-                "1:30",
-                "10:02",
-                "7:75",
-                "2:45",
-               "6:41",
-               "5:00",
-                "3:21"};
-
-
-        int[] likes = {34,
-                59,
-                125,
-                5,
-                100,
-                78,
-                 56,
-                 28,
-        2};
-
-        String[] imageURI = {
-                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utanedd",
-                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utauc",
-                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utak",
-                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utav",
-                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utamavericks",
-                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utaerb2",
-                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utaedge",
-                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utamac",
-                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utaerb"
-        };
-
-
-
-        for(int i = 0; i<8; i++)
-        {
-            Event e = new Event(start[i], titles[i], locations[i], description[i], likes[i], false, imageURI[i]);
-            Event.Event_List.add(e);
-        }
-
-    }
-
-    @TargetApi(11)
-    public void addNewEvent(){
+    //@TargetApi(11)
+    private void addNewEvent() {
         String title = ET_EventName.getText().toString();
         String date = ET_Date.getText().toString();
         String location = ET_Location.getText().toString();
         String description = ET_Description.getText().toString();
         String start = ET_Start_Time.getText().toString();
-        String imageUri = selectedImageUri.toString();
+        Uri imageUri = selectedImageUri;
 
+        if (imageUri != null) {
+            String imageStr = imageUri.toString();
 
-        Event e = new Event(start, title, location, description, 0, false, imageUri);
-        Event.Event_List.add(e);
+            if (title.isEmpty() || date.isEmpty() || location.isEmpty() || description.isEmpty() || start.isEmpty()) {
+                displayToast("Create event fields incomplete");
+            }
+            else {
+                Event e = new Event(start, title, location, description, 0, false, imageStr);
+                Event.Event_List.add(e);
 
-        // Add Event to database
-        if(title.isEmpty() || date.isEmpty() || location.isEmpty() || description.isEmpty() || start.isEmpty()) {
-            displayToast("Field left empty"); //displays error message
+                db.addEvent(title, date, start, location, description,0, false, imageStr); //stores in db
+                displayToast("event created"); //displays confirmation message
+                startActivity(new Intent(CreateEventActivity.this, ListActivity.class)); //jump back to MainActivity
+                finish();
+            }
         }
         else {
-            db.addEvent(title, date, start, location, description,0, false, imageUri); //stores in db
-            displayToast("event created"); //displays confirmation message
-            startActivity(new Intent(CreateEventActivity.this, ListActivity.class)); //jump back to MainActivity
-            finish();
+            displayToast("Please select an image");
         }
     }
 
@@ -231,6 +154,88 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
         }
         cursor.close();
         return res;
+    }
+
+    public void addDefaultEvents() {
+        String[] locations = {"Nedderman",
+                "University Center ",
+                "ERB",
+                "College Park District",
+                "College Park",
+                "ERB",
+                "Pie Five",
+                "MAC",
+                "Pickard Hall"
+
+        };
+
+        String[] titles = {"UTA Campus Connect",
+                "Pizza with the President",
+                "Khallil's Stock class",
+                "MSA Block Party",
+                "Auns Need help Coding",
+                "Birthday Party",
+                "Free Massages",
+                "Tshirt Exchange",
+                "Glass Show"
+
+        };
+
+
+
+        String[] description = {"UTA Campus Connect",
+                "Join us as we have a meeting with the president to discuss issues on campus",
+                "Khallil's loves stocks and whats to tell you more about it. Be sure to come!",
+                "MSA Block Party will be hosted before finals to get you mind off the stress!",
+                "Auns Need help Coding because he really does not know what hes doing",
+                "There will be an Event of a birthday event here at Uta. Weird right?",
+                "Events Will Be here",
+                "Please Give us an A",
+                "Dont break the App"};
+
+
+
+        String[] start = {"3:00",
+                "12:00",
+                "1:30",
+                "10:02",
+                "7:75",
+                "2:45",
+                "6:41",
+                "5:00",
+                "3:21"};
+
+
+        int[] likes = {34,
+                59,
+                125,
+                5,
+                100,
+                78,
+                56,
+                28,
+                2};
+
+        String[] imageURI = {
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utanedd",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utauc",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utak",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utav",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utamavericks",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utaerb2",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utaedge",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utamac",
+                "android.resource://com.example.zaimzanaruddin.derplist/drawable/utaerb"
+        };
+
+
+
+        for(int i = 0; i<8; i++)
+        {
+            Event e = new Event(start[i], titles[i], locations[i], description[i], likes[i], false, imageURI[i]);
+            Event.Event_List.add(e);
+        }
+
     }
 
 
