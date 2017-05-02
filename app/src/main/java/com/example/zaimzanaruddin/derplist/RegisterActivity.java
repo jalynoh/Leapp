@@ -60,6 +60,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         if(name.isEmpty() || email.isEmpty() || username.isEmpty() || password.isEmpty()) {
             displayToast("Incomplete"); //displays error message
         }
+        else if(email.contains("@") == false) {
+            displayToast("Email invalid");
+        }
+        else if(password.length() < 4) {
+            displayToast("Password must be at least 4 characters");
+        }
         else if(db.isDuplicateUser(username)) {
             displayToast("Username already taken");
         }
