@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.LinearLayoutManager;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import android.view.Menu;
+import java.util.Collections;
 
 import android.content.Intent;
 import android.view.MenuInflater;
@@ -43,7 +45,7 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
     private DerpAdapter adapter;
     private ArrayList listData;
     private Session session;
-    private boolean upvoted=false;
+
 
 
     @Override
@@ -134,24 +136,40 @@ public class ListActivity extends AppCompatActivity implements DerpAdapter.ItemC
     public void onSecondaryIconClick(int p) {
 
         ListItem item = (ListItem) listData.get(p);
+        Event e = Event.Event_List.get(p);
 
-       if(upvoted==false)
-       {
-           item.upVote();
-           upvoted=true;
-       }
-
-
-
-
+        e.Like_Event();
+        item.upVote();
 
 
     //pass new data to adapter and update
     adapter.setListData(listData);
     adapter.notifyDataSetChanged();
 
-
     }
 
+    public static void sort(){
+
+        ArrayList<Event> eList = Event.Event_List;
+
+        Collections.sort(eList, new Comparator<Event>() {
+            @Override
+            public int compare(Event e1, Event e2) {
+                return Integer.valueOf(e2.getEvent_Likes()).compareTo(e1.getEvent_Likes());
+            }
+        });
+    }
+
+    public static void sortReverse(){
+
+        ArrayList<Event> eList = Event.Event_List;
+
+        Collections.sort(eList, new Comparator<Event>() {
+            @Override
+            public int compare(Event e1, Event e2) {
+                return Integer.valueOf(e1.getEvent_Likes()).compareTo(e2.getEvent_Likes());
+            }
+        });
+    }
 
 }

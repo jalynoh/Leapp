@@ -17,6 +17,8 @@ import android.database.Cursor;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.zaimzanaruddin.derplist.ui.ListActivity;
+
 public class SplashScreen extends AppCompatActivity {
 
     private final int REQUEST_PERMISSION_READ_EXTERNAL_STORAGE=1;
@@ -36,7 +38,6 @@ public class SplashScreen extends AppCompatActivity {
 
         //Adds pre-made events to the list for testing purposes
         CEA.addDefaultEvents();
-
         db = new dbHelper(this);
         showManageDocumentsPermission();
 
