@@ -15,7 +15,7 @@ import com.example.zaimzanaruddin.derplist.ui.ListActivity;
 public class Filter extends AppCompatActivity {
 
    private RadioGroup radioGroup;
-    private RadioButton Highest, Lowest, Relevant;
+    private RadioButton Highest, Lowest;
     private Button BTN_GoBack;
 
 
@@ -34,7 +34,7 @@ public class Filter extends AppCompatActivity {
 
         Highest = (RadioButton)findViewById(R.id.MostLike);
         Lowest = (RadioButton)findViewById(R.id.LeastLike);
-        Relevant = (RadioButton)findViewById(R.id.Relevant);
+
 
 
 
@@ -53,10 +53,6 @@ public class Filter extends AppCompatActivity {
                 else if(selectedId == Lowest.getId())
                 {
                     ListActivity.sortReverse();
-                    startActivity(new Intent(Filter.this, ListActivity.class));
-                }
-                else if(selectedId ==Relevant.getId())
-                {
                     startActivity(new Intent(Filter.this, ListActivity.class));
                 }
 
