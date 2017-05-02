@@ -6,7 +6,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 
-import java.util.ArrayList;
+import java.util.*;
 
 public class Event {
     public static ArrayList<Event> Event_List = new ArrayList<Event>();
@@ -125,3 +125,5 @@ public class Event {
     }
 
 }
+
+

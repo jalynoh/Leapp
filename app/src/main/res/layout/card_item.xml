@@ -42,13 +42,13 @@
                 android:id="@+id/im_uparrow"
                 android:layout_width="70dp"
                 android:layout_height="70dp"
+                android:layout_alignBottom="@+id/lbl_location_title"
                 android:layout_alignParentEnd="true"
                 android:layout_alignParentRight="true"
+                android:layout_below="@+id/im_event_icon"
                 android:background="@drawable/background_state_drawable"
                 android:clickable="true"
-                android:src="@drawable/ic_keyboard_arrow_up_black_48dp"
-                android:layout_below="@+id/im_event_icon"
-                android:layout_alignBottom="@+id/lbl_location_title" />
+                android:src="@drawable/ic_keyboard_arrow_up_black_48dp" />
 
 
             <TextView
@@ -81,12 +81,12 @@
                 android:id="@+id/im_Likes"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignBottom="@+id/im_time"
-                android:layout_toLeftOf="@+id/im_uparrow"
-                android:layout_toStartOf="@+id/im_uparrow"
                 android:text="Upvotes"
                 android:textColor="@android:color/darker_gray"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                android:layout_below="@+id/lbl_event_title"
+                android:layout_toLeftOf="@+id/im_uparrow"
+                android:layout_toStartOf="@+id/im_uparrow" />
 
         </RelativeLayout>
 

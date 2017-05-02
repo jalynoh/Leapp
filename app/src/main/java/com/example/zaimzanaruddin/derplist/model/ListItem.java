@@ -16,6 +16,8 @@ public class ListItem {
         private String time;
         private String description;
         private int likes;
+        private boolean upvoted;
+
 
 
 
@@ -28,7 +30,14 @@ public class ListItem {
     }
 
     public void upVote(){
-        this.likes++;
+
+        if(upvoted==false)
+        {
+            this.likes++;
+            upvoted=true;
+        }
+
+
     }
 
 

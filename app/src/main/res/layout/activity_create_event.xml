@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimaryDark"
+    android:background="@drawable/utasplash"
     tools:context="com.example.zaimzanaruddin.derplist.CreateEventActivity">
 
     <TextView
@@ -36,7 +36,8 @@
         android:textColorHint="@color/white"
         android:inputType="text"
         android:gravity="center"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/ET_Location"
@@ -46,7 +47,8 @@
         android:textColorHint="@color/white"
         android:inputType="textPostalAddress"
         android:gravity="center"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/ET_Description"
@@ -58,7 +60,8 @@
         android:gravity="center"
         android:lines="2"
         android:maxLines="3"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:textStyle="bold"/>
 
     <EditText
         android:id="@+id/ET_Date"
@@ -67,6 +70,8 @@
         android:hint="date..."
         android:textColorHint="@color/white"
         android:inputType="date"
+        android:gravity="center"
+        android:textStyle="bold"
         android:textColor="@color/white"
         android:gravity="center" />
 
@@ -78,7 +83,8 @@
         android:textColorHint="@color/white"
         android:textColor="@color/white"
         android:inputType="time"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:textStyle="bold"/>
 
     <Button
         android:id="@+id/BTN_Create"

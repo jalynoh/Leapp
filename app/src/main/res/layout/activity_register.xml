@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/utasplash"
+    android:background="@drawable/login"
     tools:context="com.example.zaimzanaruddin.derplist.RegisterActivity"
     android:weightSum="1">
 
