@@ -184,11 +184,11 @@ public class CreateEventActivity extends AppCompatActivity implements View.OnCli
 
 
         String[] description = {"UTA Campus Connect",
-                "Join us as we have a meeting with the president to discuss issues on campus",
-                "Khallil's loves stocks and whats to tell you more about it. Be sure to come!",
-                "MSA Block Party will be hosted before finals to get you mind off the stress!",
-                "Auns Need help Coding because he really does not know what hes doing",
-                "There will be an Event of a birthday event here at Uta. Weird right?",
+                "Join us as we have a meeting with the president.",
+                "Khallil's whats to tell you more about it. Be sure to come!",
+                "MSA Block Party will be hosted before finals",
+                "Auns Need help Coding his project",
+                "There will be an Event of a birthday",
                 "Events Will Be here",
                 "Please Give us an A",
                 "Dont break the App"};
